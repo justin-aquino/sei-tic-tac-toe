@@ -13,6 +13,7 @@ let currentPlayer = playerX
 let hasWinner = false;
 let movesCounter = 9;
 
+
 // const winningCombo = [
 //     [],
 //     [],
@@ -111,7 +112,7 @@ cross 048 246
 */
 
 const endGame = () => {
-    if(hasWinner === false && movesCounter === 0){
+    if(hasWinner === false && movesCounter <= 0){
         results.innerText = "No one wins. Try again?"
     } else {
         results.innerText = `${currentPlayer} wins! Play again?`
@@ -140,15 +141,15 @@ const getWinner = () => {
      if ( selectionTracker[2] === currentPlayer){
         if(selectionTracker[4] === currentPlayer && selectionTracker[6] === currentPlayer){
             // hasWinner = true;
-            alert(`${currentPlayer} wins! 246`)
+            
             return true;
         } 
         if(selectionTracker[1] === currentPlayer && selectionTracker[0] === currentPlayer){
-            alert(`${currentPlayer} wins! 012`)
+            
             return true;
         }
         if( selectionTracker[5] === currentPlayer && selectionTracker[8] === currentPlayer) {
-            alert(`${currentPlayer} wins on 258!`)
+           
             return true;
         }
     } else if(selectionTracker[0] === currentPlayer){
@@ -161,20 +162,20 @@ const getWinner = () => {
         if (selectionTracker[4] === currentPlayer &&  selectionTracker[8] === currentPlayer){
             // alert("player wins 012 ")
             hasWinner = true;
-            alert(`${currentPlayer} wins! 048`)
+          
             return true;
         }
         if (selectionTracker[3] === currentPlayer && selectionTracker[6] === currentPlayer){
             // alert("player wins 036")
             // hasWinner = true;
-            alert(`${currentPlayer} wins! 036`)
+            
             return true;
         }
     } else if(selectionTracker[1] === currentPlayer){
         if(selectionTracker[4] === currentPlayer && selectionTracker[7] === currentPlayer){
             // alert("player wins 246")
             // hasWinner = true;
-            alert(`${currentPlayer} wins! 147`)
+         
             return true;
         }
         // if(selectionTracker[5] === currentPlayer &&  selectionTracker[8]  === currentPlayer){
@@ -185,14 +186,14 @@ const getWinner = () => {
         // } 
     } else if(selectionTracker[3] === currentPlayer){
         if(selectionTracker[4] === currentPlayer && selectionTracker[5] === currentPlayer){
-            alert("player wins 345")
+           
             // hasWinner = true;
             // alert(`${currentPlayer} wins!`)
             return true;
         } 
     } else if (selectionTracker[6] === currentPlayer){
         if(selectionTracker[7] === currentPlayer && selectionTracker[8] === currentPlayer){
-            alert("player wins 678")
+          
             // hasWinner = true;
             // alert(`${currentPlayer} wins!`)
             return true
